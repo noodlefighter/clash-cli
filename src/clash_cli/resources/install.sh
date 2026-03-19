@@ -43,6 +43,8 @@ _merge_config_restart
 cat <<EOF >"/etc/systemd/system/${BIN_KERNEL_NAME}.service"
 [Unit]
 Description=$BIN_KERNEL_NAME Daemon, A[nother] Clash Kernel.
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=simple
